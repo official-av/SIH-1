@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 
+<!-- Mirrored from steelcoders.com/modern/admin2/form-select2.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Mar 2017 03:04:26 GMT -->
+
 <head>
 
 	<!-- Title -->
 	<title>Ministry Online Portal | Ministry Home</title>
+
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<meta charset="UTF-8">
 	<meta name="description" content="Admin Dashboard Template" />
@@ -21,6 +24,7 @@
 	<link href="assets/plugins/3d-bold-navigation/css/style.css" rel="stylesheet" type="text/css" />
 	<link href="assets/plugins/summernote-master/summernote.css" rel="stylesheet" type="text/css" />
 	<link href="assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
 
 	<!-- Theme Styles -->
 	<link href="assets/css/modern.min.css" rel="stylesheet" type="text/css" />
@@ -125,7 +129,6 @@
 			</div>
 		</div>
 		<!-- Page Sidebar Inner -->
-		<!-- Page Sidebar Inner -->
 		<div class="page-inner">
 			<div class="page-breadcrumb">
 				<ol class="breadcrumb container">
@@ -140,30 +143,41 @@
 				</div>
 			</div>
 			<div id="main-wrapper" class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
+				<form name="minrep" onsubmit="">
+					<div class="row">
 						<div class="panel panel-default">
+							<div class="panel-heading clearfix">
+								<h4 class="panel-title">The <span id="invitee">MP</span> has adressed to you the following question, Create a Reply!</h4>
+							</div>
 							<div class="panel-body">
 								<div class="row">
 									<div class="col-md-10 col-md-offset-1">
+										<br/>
 										<div class="panel panel-success">
 											<div class="panel-heading clearfix">
 												<h4 class="panel-title">Selected question subject comes here</h4>
 											</div>
 											<div class="panel-body">
 												<div>
-													<p>the question content which the ministry just selected for collaborating upon</p>
+													<p>the question content which the ministry just got invited for collaborating upon</p>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
+
 								<div class="row">
-									<div class="col-md-7">
+									<div class="col-md-10 col-md-offset-1">
 										<div class="panel panel-white">
 											<div class="panel-body">
-												<h3>Select Ministries to Invite</h3>
-												<select class="js-states form-control" multiple="multiple" id="select_min" tabindex="-1" style="display: none; width: 100%">													<option value='elem_1'>elem 1</option>
+												<div class="row">
+													<label class="col-sm-2 control-label"><h3>Create Reply</h3></label>
+													<div class="col-sm-10">
+														<textarea name="finalans" id="finalans" rows="15" style="width:100%" class="form-control"></textarea>
+													</div>
+												</div>
+												<h3>Select Replies from various ministries</h3>
+												<select class="js-states form-control" multiple="multiple" tabindex="-1" style="display: none; width: 100%">													<option value='elem_1'>elem 1</option>
 													<option value='elem_2'>elem 2</option>
 													<option value='elem_3'>elem 3</option>
 													<option value='elem_4'>elem 4</option>
@@ -171,39 +185,74 @@
 													<option value='elem_100'>elem 100</option>
 													</select>
 												<div class="row">
-													<div class="col-md-7"><button type="button" onclick="adddomfunc();" class="btn btn-success btn-addon m-b-sm"><i class="fa fa-plus"></i> Add Ministries</button></div>
+													<div class="col-md-7"><button type="button" onclick="adddomfunc();" class="btn btn-success btn-addon m-b-sm"><i class="fa fa-plus"></i> Add Inputs</button></div>
+												</div>
+												<div class="row">
+													<div class="col-md-12">
+														<div class="panel panel-default">
+															<div class="panel-heading" role="tab" id="headingTwo">
+																<h4 class="panel-title">
+																	<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+ Add Additional Question
+                                                        </a>
+																</h4>
+															</div>
+															<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+																<div class="panel-body">
+																	<div class="row">
+																		<div class="col">
+																			<div class="form-group">
+																				<label for="input-Default" class="col-sm-2 control-label">Question:</label>
+																				<div class="col-sm-10">
+																					<textarea name="addques" rows="6" id="addques" style="width:100%"></textarea>
+																				</div>
+																			</div>
+
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="col">
+																			<div class="form-group">
+																				<label for="input-Default" class="col-sm-2 control-label">Answer:</label>
+																				<div class="col-sm-10">
+																					<textarea name="addans" rows="6" id="addans" style="width:100%"></textarea>
+																				</div>
+																				<div class="col-md-4 offset-md-2">
+																					<button type="button" onclick="addquestion();" class="btn btn-success btn-addon m-b-sm"><i class="fa fa-plus"></i> Add Question</button></div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+
 												</div>
 											</div>
 										</div>
 									</div>
-									<div class="col-md-5">
-										<div class="panel panel-green">
-											<div class="panel-body" id="minpanel">
-												<br/>
-												<button type="button" class="btn btn-default btn-addon m-b-sm"><i class="fa fa-plus"></i> Click for Recommendations</button>
+								</div>
 
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-5">
-
-
-										</div>
+								<div class="row">
+									<div class="col">
+										<button type="button" class="btn btn-success col-md-2 col-md-offset-3">Clear Contents</button>
+										<button type="button" class="btn btn-success col-md-2 col-md-offset-1">Submit Reply</button>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-
-					<!-- Row -->
-				</div>
+				</form>
 			</div>
-			<!-- Main Wrapper -->
-			<div class="page-footer">
-				<div class="container">
-					<p class="no-s">2017 &copy; Portal by The Resolution Squad</p>
-				</div>
+
+
+
+			<!-- Row -->
+		</div>
+		<!-- Main Wrapper -->
+		<div class="page-footer">
+			<div class="container">
+				<p class="no-s">2017 &copy; Portal by The Resolution Squad</p>
 			</div>
 		</div>
 		<!-- Page Inner -->
@@ -212,18 +261,24 @@
 
 
 	<!-- Javascripts -->
+
+	<!-- Javascripts -->
 	<script src="assets/plugins/jquery/jquery-2.1.4.min.js"></script>
 	<script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
 	<script src="assets/plugins/pace-master/pace.min.js"></script>
 	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="assets/plugins/uniform/jquery.uniform.min.js"></script>
 	<script src="assets/plugins/waves/waves.min.js"></script>
 	<script src="assets/plugins/3d-bold-navigation/js/main.js"></script>
+	<script src="assets/plugins/summernote-master/summernote.min.js"></script>
 	<script src="assets/js/modern.min_2.js"></script>
+	<script src="assets/js/pages/form-elements.js"></script>
 	<script src="assets/plugins/select2/js/select2.min.js"></script>
 	<script src="assets/js/pages/form-select2.js"></script>
 	<script src="assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
 	<script src="assets/js/pages/form-elements.js"></script>
+	<script src="assets/js/custom.js"></script>
 </body>
 
 </html>
